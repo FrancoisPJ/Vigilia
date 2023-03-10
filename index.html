@@ -139,13 +139,15 @@
     <!-- Call to action-->
     <section class="page-section bg-dark text-white">
         <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">Notre prochain drop</h2>
-            <h1 class="mb-4" id="countdown">Notre prochain drop</h1>
-
+            <h2 class="mb-4" id="statut">Notre prochain drop</h2>
+            <h1 class="mb-4" id="countdown"></h1>
+            <img src="assets/img/portfolio/fullsize/7.png" id="pioupiou" alt="Mon image" style="display: none;">
+            <a class="btn btn-light btn-xl" href="#" id="resa" style="display: none;">cliquez ici</a>
             <script>
                 // Set the date we're counting down to
-                var countDownDate = new Date("Mar 10, 2023 15:30:00").getTime();
-
+                var countDownDate = new Date("Mar 10, 2023 10:14:00").getTime();
+                var pioupiou = document.getElementById("pioupiou");
+                var resa = document.getElementById("resa");
                 // Update the count down every 1 second
                 var x = setInterval(function () {
 
@@ -164,15 +166,18 @@
                     // Output the result in an element with id="demo"
                     document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
                         + minutes + "m " + seconds + "s ";
+                        pioupiou.style.display = "none";
 
                     // If the count down is over, write some text 
                     if (distance < 0) {
                         clearInterval(x);
-                        document.getElementById("countdown").innerHTML = "EXPIRED";
+                        document.getElementById("countdown").innerHTML = "Drop actuel";
+                        pioupiou.style.display = "block";
+                        document.getElementById("statut").innerHTML = "";
+                        resa.style.display = "block";
                     }
                 }, 1000);
             </script>
-            <a class="btn btn-light btn-xl" href="#">cliquez ici</a>
         </div>
     </section>
     <!-- Contact-->
@@ -188,7 +193,6 @@
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
-
                 </div>
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center">
